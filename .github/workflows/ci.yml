@@ -1,2 +1,5 @@
 # System run tests
 name: Sonia-CI
+on: [push, pull_request]
+
+job:
