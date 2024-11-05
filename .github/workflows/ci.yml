@@ -1,6 +1,10 @@
 # System run tests
 name: Sonia-CI
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 job:
   ci-test:
@@ -15,7 +19,6 @@ job:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
       - run: |
           npm ci
           npm run test
